@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TD</title>
+</head>
+<body>
+    <Script>
+
+            alert("Bienvenue dans ce jeu de devinette !");
+            var solution = Math.floor(Math.random() * 9) + 1;
+            var proposition=-solution;
+            var essai=0;
+            var essaiMax=3; 
+            loopWhile:
+            do {             
+                        proposition = Number(prompt("Entrez un nombre entre 1 et 9:"));
+                        if(Number.isNaN(proposition)||proposition<1||proposition>9){
+                            alert("Attention ! Veuillez entrer un nombre.");           
+                        }
+                        else if (proposition<1||proposition>9){
+                            alert("Attention ! Veuillez entrer un nombre compris entre 1 et 9.");
+                        }
+                essai++;
+            } while(essai<essaiMax &&  proposition!==solution);
+            if(proposition===solution)
+            {
+            alert("Bravo ! La solution était "+solution+".");
+            }
+            else
+            {
+                alert("Perdu ... La solution était "+solution+".");
+            } 
+    </Script>
+</body>
+</html>
